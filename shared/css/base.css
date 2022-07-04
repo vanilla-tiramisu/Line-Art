@@ -1,0 +1,19 @@
+@import url(main.css);
+@import url(layout.css);
+@import url(forms.css);
+@import url(button.css);
+@import url(title.css);
+
+* {
+    padding: none;
+    margin: 0%;
+    border: none;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,31 @@
+/* 
+    index.html
+ */
+
+.main-cover-wrapper {
+    background-image: url(../../res/img/mainimg.jpg);
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: column-reverse;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+nav li {
+    display: inline-flex;
+    /* display: inline; */
+    position: relative;
+}
+
+nav a {
+    padding: .5em;
+}

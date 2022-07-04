@@ -1,0 +1,65 @@
+/*
+    animation styles.
+ */
+
+.descend {
+    animation: descend 5s infinite;
+    -webkit-animation: descend 5s infinite;
+
+}
+
+@keyframes descend {
+    0% {
+        opacity: 0;
+    }
+
+    20%,
+    100% {
+        opacity: 1;
+        transform: translateY(5px);
+    }
+}
+
+.descend:hover {
+    cursor: pointer;
+}
+
+/* 
+    specific buttons.
+ */
+
+#move-down-button {
+    border: 20px solid;
+    margin-bottom: 5px;
+    border-color: white transparent transparent transparent;
+    filter: drop-shadow(10px 5px 1rem white);
+}
+
+nav a {
+    color: rgb(231, 239, 247);
+    font-family: 'Century Gothic', Times, serif;
+    font-size: 1.5rem;
+}
+
+nav a:hover {
+    color: white;
+    text-shadow: 0 0 20px whitesmoke;
+    transition: .1s;
+}
+
+nav li::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: .2s all;
+}
+
+nav li:hover::before {
+    left: 0;
+    width: 100%;
+    cursor: pointer;
+}

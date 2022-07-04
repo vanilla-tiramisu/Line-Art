@@ -1,0 +1,12 @@
+#main-title {
+    color: #ffffff;
+    font-family: Garamond;
+    font-size: 10rem;
+    max-width: 5rem;
+    margin: .25em;
+    line-height: .75em;
+    filter: drop-shadow(10px 10px 1rem rgb(244, 251, 252));
+    cursor: default;
+    align-self: flex-start;
+    flex-shrink: 1;
+}
