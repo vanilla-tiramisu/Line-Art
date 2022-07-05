@@ -1,20 +1,38 @@
 /* 
     index.html
  */
-
-.main-cover-wrapper {
-    background-image: url(../../res/img/mainimg.jpg);
-    background-size: cover;
-    position: absolute;
-    width: 100%;
-    min-height: 100%;
+.sections {
     display: flex;
     display: -webkit-flex;
+    flex-flow: column wrap;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+}
+
+.main-cover-wrapper {
+
     flex-flow: column-reverse;
     align-items: center;
 }
 
+.main-cover {
+    background-image: url(../../res/img/mainimg.jpg);
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
 nav {
+    position: fixed;
+    right: 0%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -22,10 +40,50 @@ nav {
 
 nav li {
     display: inline-flex;
-    /* display: inline; */
     position: relative;
 }
 
 nav a {
     padding: .5em;
+}
+
+/* second-wrapper */
+
+.second-wrapper {
+    flex-flow: column wrap;
+}
+
+.section-title {
+    position: relative;
+    top: .3em;
+    z-index: -1;
+}
+
+.current-card {
+    position: relative;
+    height: 70%;
+    width: 70%;
+    background-color: #83B4B9;
+    border-radius: 4rem;
+}
+
+.current-card::before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 100%;
+    height: 15px;
+    width: 90%;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35)0%, rgba(0, 0, 0, 0)80%);
+    transform: translateY(5px);
+}
+
+.next-card {
+    position: relative;
+    right: 5%;
+    height: 70%;
+    width: 70%;
+    background-color: white;
+    border-radius: 4rem 0 0 4rem;
 }

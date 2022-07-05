@@ -8,10 +8,17 @@
     padding: none;
     margin: 0%;
     border: none;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #f1f1e6;
 }
 
 ul {
     list-style: none;
+    padding-inline-start: 0%;
 }
 
 a {

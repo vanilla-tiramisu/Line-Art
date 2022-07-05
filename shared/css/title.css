@@ -10,3 +10,10 @@
     align-self: flex-start;
     flex-shrink: 1;
 }
+
+.section-title {
+    color: rgb(35, 84, 89);
+    font-family: Garamond;
+    font-size: 10rem;
+
+}
