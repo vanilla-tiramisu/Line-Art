@@ -1,0 +1,54 @@
+@import "pages/main-page.css";
+@import "components/buttons.css";
+/*clear*/
+:root{
+    box-sizing: border-box;
+    font-size: calc(0.5vw + 0.7em);
+    background-color: #eee;
+    color: #575757;
+    font-family: "Courier New", monospace;
+}
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+ul,li,a{
+    all: unset;
+}
+
+img{
+    max-width: 100%;
+}
+/*basic settings*/
+section{
+    width: 100%;
+    padding: 2em 5%;
+}
+
+section.--full-height{
+    height: 100vh;
+}
+
+h2{
+    font-size: 3em;
+    color: black;
+    font-family: "Segoe Script", sans-serif;
+}
+
+h4{
+    color: black;
+    font-size: 1.5em;
+}
+
+h5{
+    color: black;
+    font-size: 1.2em;
+}
+
+/*tools*/
+.--grow:hover{
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+}
