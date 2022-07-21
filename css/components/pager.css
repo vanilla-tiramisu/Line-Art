@@ -1,0 +1,29 @@
+.pager{
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'Century Gothic', serif;
+    font-weight: 700;
+}
+.pager>*{
+    margin: 1em;
+}
+.pager a{
+    color: darkolivegreen;
+    display: inline-block;
+    padding: .5em;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.pager a.--current{
+    color: #d95401;
+}
+
+.pager a:hover{
+    transform: rotate(10deg);
+}
+
+.pager>form>input{
+    width: 4em;
+    margin: 1em;
+}

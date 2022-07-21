@@ -1,0 +1,91 @@
+/*register*/
+form.register{
+    padding-top: 2em;
+    min-height: 85vh;
+}
+/*search*/
+section.search{
+    min-height: 85vh;
+}
+section.search>.intro__text{
+    min-height: 85vh;
+    backdrop-filter: blur(1em);
+}
+
+section.search form{
+    min-width: 50vw;
+    position: relative;
+}
+
+.search-box>section{
+    width: 100%;
+}
+.search-box>section>button{
+    float: right;
+    position: absolute;
+    z-index: 2;
+    padding: unset;
+    width: 20%;
+    height: 2.5em;
+    border: none;
+    font-size: 1.25em;
+    background-color: olivedrab;
+    color: #fff;
+    border-radius:0 1em 1em 0 ;
+}
+
+.search-box>section>button:hover{
+    transform: none;
+    background-color: #7da629;
+}
+
+.search-box>section>input{
+    width: 80%;
+    height: 2.5em;
+    border: olivedrab 4px solid;
+    color: darkolivegreen;
+    font-size: 1.25em;
+    line-height: 1em;
+    padding-left: 1em;
+    border-radius: 1em 0 0 1em;
+    border-right: none;
+}
+
+/*items*/
+h1.items{
+    padding-top: 2em;
+}
+main.items{
+    padding: 2em 0;
+}
+
+main.items>h2{
+    text-align: center;
+    margin: 1em;
+}
+main.items>article{
+    width: 80vw;
+    margin: 2em auto;
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+}
+main.items>article>figure{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+main.items>article>figure>img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+main.items>article>figure>figcaption{
+    text-align: center;
+    padding: 1em;
+}
+

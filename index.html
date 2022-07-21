@@ -10,11 +10,11 @@
 <nav>
     <img src="shared/icons/icon-hamburger.svg" alt="hamburger" class="__hamburger --display">
     <ul class="__menu">
-        <li><a href="#">home</a></li>
-        <li><a href="#">search</a></li>
+        <li><a href="index.html">home</a></li>
+        <li><a href="search.html">search</a></li>
         <li><a href="#">items</a></li>
-        <li><a href="#">login</a></li>
-        <li><a href="#">register</a></li>
+        <li><a class="login">login</a></li>
+        <li><a href="register.html">register</a></li>
         <li><span class="__close">cancel</span></li>
     </ul>
 </nav>
@@ -145,8 +145,35 @@
                     <p>a fake introduction</p>
                 </figcaption>
             </figure>
+            <figure>
+                <div class="__tag">1</div>
+                <img src="shared/img/20200312135049-5e6a3e3918ca4.jpg" alt="">
+                <figcaption>
+                    <h5>here's the title</h5>
+                    <p>
+                        There should've been a long description here, including:
+                        author,price,visits
+                    </p>
+                </figcaption>
+            </figure>
+            <figure>
+                <div class="__tag">1</div>
+                <img src="shared/img/carton-dinvitation-recto_grandes-surfWEB_o.jpg" alt="">
+                <figcaption>
+                    <h5>here's the title</h5>
+                    <p>a fake introduction</p>
+                </figcaption>
+            </figure>
+            <figure>
+                <div class="__tag">1</div>
+                <img src="shared/img/glitch_stripes_4_o.jpg" alt="">
+                <figcaption>
+                    <h5>here's the title</h5>
+                    <p>a fake introduction</p>
+                </figcaption>
+            </figure>
         </div>
-        <button class="--grow">
+        <button>
             discover more
         </button>
     </section>
@@ -158,6 +185,32 @@
         All Rights Reserved.
     </small>
 </footer>
+<!--dialog boxes-->
+<div class="dialog-wrapper">
+    <div class="dialog">
+        <form action="" method="post">
+            <fieldset>
+                <legend><span>LOGIN</span></legend>
+                <section>
+                    <label for="user_name">Username</label>
+                    <input type="text" name="user_name" id="user_name" placeholder="your username here">
+                </section>
+                <section>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="your password here">
+                </section>
+                <section>
+                    <input type="submit" value="login!" class="button --success">
+                    <input type="button" value="cancel" class="button __close">
+                </section>
+                <section>
+                    <a href="" class="--tips">Not registered yet? Get an account now!</a>
+                </section>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
 <script src="js/main-page.js">
 </script>
 </body>

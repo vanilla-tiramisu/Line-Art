@@ -59,3 +59,15 @@ const IMAGE_TAGS=document.querySelectorAll('.main__items>figure>.__tag');
 for( let i=0;i <IMAGE_TAGS.length;i++){
     IMAGE_TAGS[i].firstChild.nodeValue=String(i+1);
 }
+
+//dialog boxes
+const DIALOG_LOGIN=document.querySelector('.dialog-wrapper')
+const LOGIN_CLOSE=document.querySelector('.dialog .__close')
+const LOGIN=document.querySelector('.login')
+LOGIN_CLOSE.addEventListener('click',(()=>{
+        DIALOG_LOGIN.classList.remove('--display')
+    })
+)
+LOGIN.addEventListener('click',(()=>{
+    DIALOG_LOGIN.classList.add('--display')
+}))

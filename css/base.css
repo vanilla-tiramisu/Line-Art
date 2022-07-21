@@ -1,5 +1,9 @@
 @import "pages/main-page.css";
+@import "pages/other-pages.css";
 @import "components/buttons.css";
+@import "components/forms.css";
+@import "components/nav.css";
+@import "components/pager.css";
 /*clear*/
 :root{
     box-sizing: border-box;
@@ -51,4 +55,8 @@ h5{
 .--grow:hover{
     transform: scale(1.1);
     transition: all .2s ease-in-out;
+}
+
+.--display{
+    display: block;
 }

@@ -1,0 +1,67 @@
+.dialog-wrapper {
+    position: fixed;
+    z-index: 5;
+    display: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.dialog-wrapper.--display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: 700;
+    transition: .1s ease-in-out;
+}
+
+.dialog{
+    background-color: #fff;
+    color: #0a4d4b;
+    border: 3px solid #1e6dbf;
+}
+
+form>fieldset{
+    border: none;
+    padding: 1em;
+}
+
+form>fieldset>section{
+    padding: 1em;
+    text-align: center;
+    transition: .1s ease-in-out;
+}
+
+form>fieldset>legend{
+    font-size: 2em;
+    text-align: center;
+    color: cadetblue;
+    padding-top: 1em;
+}
+
+input{
+    border: 2px dashed #7dbbaa;
+    -webkit-border-radius: .3em;
+    -moz-border-radius: .3em;
+    border-radius: .3em;
+    padding: .3em;
+    transition: .1s ease-in-out;
+    outline: none;
+    color: #1b7c79;
+}
+
+input::placeholder{
+    color: #91a6a5;
+    font-weight: 700;
+}
+
+form a{
+    font-size: .9em;
+    cursor: pointer;
+}
+form .--tips{
+    color: #999;
+}
+
