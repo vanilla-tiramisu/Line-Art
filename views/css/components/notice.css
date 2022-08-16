@@ -1,0 +1,21 @@
+.notice{
+    position: fixed;
+    z-index: 100;
+    top: -100px;
+    left: 50%;
+    right: 50%;
+    margin-left: -150px;
+    margin-right: -150px;
+    text-align: center;
+    background-color: rgba(216, 236, 243, 0.75);
+    color: #1e6dbf;
+    padding: 0.75em;
+    border: 2px solid #1e6dbfaa;
+    display: none;
+    transition: .5s ease-in-out;
+}
+
+.notice.--display{
+    display: block;
+    top: 10px;
+}

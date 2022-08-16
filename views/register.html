@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Line Art - register</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+<nav>
+    <img src="../shared/icons/icon-hamburger.svg" alt="hamburger" class="__hamburger --display">
+    <ul class="__menu">
+        <li><a href="#">home</a></li>
+        <li><a href="#">search</a></li>
+        <li><a href="#">items</a></li>
+        <li><a class="login">login</a></li>
+        <li><a href="register.html">register</a></li>
+        <li><span class="__close">cancel</span></li>
+    </ul>
+</nav>
+<form method="post" class="register">
+    <fieldset>
+        <legend><span>REGISTER</span></legend>
+        <section>
+            <label for="username">Username<span class="__star">*</span></label>
+            <input type="text" name="username" id="username" placeholder="your username here"
+                   required pattern="[\w-]+" maxlength="16">
+            <p class="__message"></p>
+            <p class="__tips">less than 17 characters;<br> containing only letters, numbers, "_" and "-".</p>
+
+        </section>
+        <section>
+            <label for="password">Password<span class="__star">*</span></label>
+            <input type="password" name="password" id="password" placeholder="your password here"
+                   required pattern="[.\w-]+" minlength="6" maxlength="20">
+            <p class="__message"></p>
+            <p class="__tips">6-20 characters;<br> containing only letters, numbers, "_", "-" and ".";
+                <br>Pure number serials are not allowed.
+            </p>
+        </section>
+        <section>
+            <label for="confirmed-password">Confirm<span class="__star">*</span></label>
+            <input type="password" name="confirmed-password" id="confirmed-password"
+                   placeholder="confirmed password here" required>
+            <p class="__message"></p>
+        </section>
+        <section>
+            <label for="email">Email<span class="__star">*</span></label>
+            <input type="email" name="email" id="email" placeholder="your email here" required
+            pattern="[\w-]+@[\w-]+\.[\w-]+" maxlength="50">
+            <p class="__message"></p>
+        </section>
+        <section>
+            <label for="phone">Phone<span class="__star">*</span></label>
+            <input type="tel" name="phone" id="phone" placeholder="your phone number here" required
+            pattern="\d+" maxlength="11" minlength="11">
+            <p class="__message"></p>
+        </section>
+        <section>
+            <label for="address">Address<span class="__star">*</span></label>
+            <input type="text" name="address" id="address" placeholder="your address here" required>
+            <p class="__message"></p>
+        </section>
+        <section>
+            <button type="button" value="submit" class="--success">submit</button>
+        </section>
+    </fieldset>
+</form>
+<footer>
+    <small>
+        Copyright © 2020-2024<br>
+        <strong>Line Art</strong><br>
+        All Rights Reserved.
+    </small>
+</footer>
+<div class="notice">sample</div>
+<script src="js/form.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>

@@ -50,6 +50,7 @@ input{
     transition: .1s ease-in-out;
     outline: none;
     color: #1b7c79;
+    margin-right: .5em;
 }
 
 input::placeholder{
@@ -61,7 +62,28 @@ form a{
     font-size: .9em;
     cursor: pointer;
 }
-form .--tips{
+form .--alternative{
     color: #999;
+
+}
+form .__tips{
+    color: #999;
+    font-size: .75em;
+    margin: 2px;
 }
 
+form .__star{
+    color: #cb3700;
+}
+
+form .__message{
+    font-family: "Dubai", serif;
+    font-size: .9em;
+    display: inline-block;
+    position: absolute;
+    text-align: left;
+}
+
+form .__message.--fail{
+    color: #cb3700;
+}

@@ -1,29 +1,3 @@
-const HAMBURGER = document.querySelector('nav>.__hamburger');
-const MENU = document.querySelector('nav>.__menu');
-const CLOSE_NAV = document.querySelector('nav .__close')
-
-HAMBURGER.addEventListener("click", toggleMenu)
-CLOSE_NAV.addEventListener('click', toggleMenu)
-
-
-function toggleMenu() {
-    MENU.classList.toggle("--display")
-    HAMBURGER.classList.toggle("--display")
-    CLOSE_NAV.classList.toggle("--display")
-}
-
-const NAV=document.querySelector('nav')
-window.onscroll=showBackground;
-function showBackground(){
-    let scrollPos=document.documentElement.scrollTop
-    let fullHeight=window.innerHeight
-    if(scrollPos>fullHeight){
-        NAV.classList.add("--background")
-    }else if(scrollPos<=fullHeight){
-        NAV.classList.remove("--background")
-    }
-}
-
 // carousel
 const CAROUSEL_IMAGES=document.querySelectorAll('.carousel__img-wrapper>img')
 const CAROUSEL_LEFT=document.querySelector('.carousel__arrow.--left')
@@ -71,3 +45,9 @@ LOGIN_CLOSE.addEventListener('click',(()=>{
 LOGIN.addEventListener('click',(()=>{
     DIALOG_LOGIN.classList.add('--display')
 }))
+
+//discover more
+const DISCOVER_MORE=document.querySelector('section.main__flow>button')
+DISCOVER_MORE.addEventListener('click',()=>{
+    window.location.href="items.html"
+})

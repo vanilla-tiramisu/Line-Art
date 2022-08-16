@@ -4,6 +4,7 @@
 @import "components/forms.css";
 @import "components/nav.css";
 @import "components/pager.css";
+@import "components/notice.css";
 /*clear*/
 :root{
     box-sizing: border-box;
@@ -36,12 +37,14 @@ section.--full-height{
 }
 
 h2{
+    text-align: center;
     font-size: 3em;
     color: black;
     font-family: "Segoe Script", sans-serif;
 }
 
 h4{
+    text-align: center;
     color: black;
     font-size: 1.5em;
 }
