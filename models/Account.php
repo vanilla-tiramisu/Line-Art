@@ -63,7 +63,6 @@ class Account extends Base
 
     public function loginByUsername($username,$password): bool
     {
-        //TODO: 逻辑补全
         try {
             $sql = "SELECT * FROM users WHERE username='" . $username . "'
             AND password='".$password."'";
@@ -81,7 +80,6 @@ class Account extends Base
 
     public function loginByEmail($email,$password): bool
     {
-        //TODO: 逻辑补全
         try {
             $sql = "SELECT * FROM users WHERE email='" . $email . "'
             AND password='".$password."'";

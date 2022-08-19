@@ -28,7 +28,7 @@ Username.addEventListener('blur', async (event) => {
         msg.innerHTML = "Username should be less than 17 characters!"
     } else {
         //查询后端数据库里有没有相同名称
-        let result = await searchFromDb('../controllers/searchUsername.php', event.target.value, 'username')
+        let result = await searchFromDb('../controllers/findUsername.php', event.target.value, 'username')
         // console.log(result)
         if (result.status === "success") {
             msg.classList.remove("--fail")
@@ -126,7 +126,7 @@ Email.addEventListener('blur', async (event) => {
         msg.innerHTML = "Please enter an available email!"
     } else {
         //查询后端数据库里有没有相同名称
-        let result = await searchFromDb('../controllers/searchEmail.php', event.target.value, 'email')
+        let result = await searchFromDb('../controllers/findEmail.php', event.target.value, 'email')
         // console.log(result)
         if (result.status === "success") {
             msg.classList.remove("--fail")
@@ -187,3 +187,21 @@ Address.addEventListener('blur', (event) => {
         }
     }
 )
+//
+highlightSelected("nav .__register")
+window.addEventListener("scroll", ()=>{
+    showBackground(1)
+});
+
+(async function () {
+    if (document.cookie) {
+        let result = await getSession()
+        if (result.logged === true) {
+            sendNotice('.notice',"You're already logged in. ")
+            setTimeout(()=>{
+                window.location="index.html"
+            },1000)
+        }
+    }
+
+})();

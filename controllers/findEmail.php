@@ -1,10 +1,10 @@
 <?php
-require_once '../models/Search.php';
-use php\models\Search;
+require_once '../models/Find.php';
+use php\models\Find;
 //NOTE: may be reconstructed one day.
-$search=new Search();
+$find=new Find();
 try {
-    $found=$search->searchEmail($_GET['email']);
+    $found=$find->findEmail($_GET['email']);
     if($found){
         echo json_encode([
             'email'=>$_GET['email'],

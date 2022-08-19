@@ -8,13 +8,17 @@ nav {
     background: linear-gradient(45deg, lightblue, #1e6dbf 50%, white 50%, white);
 }
 
-nav > .__hamburger {
+nav > .__hamburger, nav > .__close {
     display: none;
     position: absolute;
     z-index: 5;
     right: .7em;
     top: .7em;
     cursor: pointer;
+}
+
+nav > .__hamburger.--display, nav > .__close.--display {
+    display: inline-block;
 }
 
 nav > .--display {
@@ -35,7 +39,7 @@ nav > .__menu {
     display: none;
 }
 
-nav>.__menu.--display{
+nav > .__menu.--display {
     display: block;
 }
 
@@ -43,30 +47,64 @@ nav>.__menu.--display{
     display: block;
     position: relative;
     color: #1e6dbf;
-    margin: 1em;
-    font-size: 2em;
+    margin: .75em;
+    font-size: 1.75em;
     font-family: "Segoe Script", sans-serif;
     font-weight: 700;
     cursor: pointer;
 }
 
-.__menu > li > span {
+nav>.__menu>.__logout>span {
     color: #777;
 }
 
-@media (min-width: 50em) {
+.__menu > .__self {
+    display: inline-block;
+    transition: .2s ease-in-out;
+}
+
+.__menu > .__self > a.__avatar {
+    display: inline-block;
+    transition: .2s ease-in-out;
+    background-color: #fff;
+    background-image: url('../../../shared/img/P04160_10_o.jpg');
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    margin: 0;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    filter: drop-shadow(2px 2px 2px #999);
+}
+
+.__menu > .__self > a.__avatar:hover {
+    transform: scale(1.1);
+}
+
+.__menu > .__self > .__username {
+    transition: .2s ease-in-out;
+    font-family: "Lucida Sans Typewriter", serif;
+    font-weight: 400;
+    color: #000;
+}
+
+.__menu > .__self > .__username:hover {
+    color: #333;
+    transform: scale(1.1);
+}
+
+@media (min-width: 900px) {
     nav {
         position: fixed;
         background: unset;
         height: 3em;
         width: 100%;
-
+        transition: .3s ease-in-out;
     }
 
     nav.--background {
         background-color: rgba(30, 109, 191, .7);
         backdrop-filter: blur(1em);
-
     }
 
     nav.--background .__menu > li > * {
@@ -93,16 +131,43 @@ nav>.__menu.--display{
         transition: all .2s ease-in-out;
     }
 
+    nav .--selected {
+        filter: brightness(1.5) drop-shadow(0 0 3px lightgoldenrodyellow);
+    }
+
     .__menu > li:hover {
         transform: rotate(10deg);
         transition: .2s ease-in-out;
     }
-
-    .__menu > li > span {
+    nav .--selected:hover{
+        transform: none;
+    }
+    nav > .__hamburger.--display {
         display: none;
     }
 
-    nav > .__hamburger.--display {
+    .__menu > .__self {
+        display: block;
+        transition: .2s ease-in-out;
+    }
+
+    .__menu > .__self > a.__avatar {
+        position: absolute;
+        padding: 0;
+        right: -20px;
+        top: -20px;
+    }
+
+    .__menu > .__self:hover {
+        transform: none;
+    }
+
+    .__menu > .__self > a.__avatar:hover {
+        transform: rotate(10deg);
+        position: absolute;
+    }
+
+    .__menu > .__self > a.__username {
         display: none;
     }
 }

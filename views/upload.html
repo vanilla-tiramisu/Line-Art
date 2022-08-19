@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>Searching...</title>
+    <title>Line Art - register</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="shortcut icon" href="favicon.ico">
 </head>
@@ -25,22 +25,54 @@
         <li class="__logout"><span >logout</span></li>
     </ul>
 </nav>
-<section class="__intro search">
-    <div class="triangle widget"></div>
-    <div class="circle widget"></div>
-    <div class="square widget"></div>
-    <div class="intro__text">
-        <h1 class="intro__title">
-            Line Art.
-        </h1>
-        <form action="" method="get" class="search-box">
-            <section>
-                <input type="text" name="search" id="search" maxlength="100">
-                <button type="submit">GO!</button>
-            </section>
-        </form>
-    </div>
-</section>
+<form method="post" class="register">
+    <fieldset>
+        <legend><span>UPLOAD</span></legend>
+        <section>
+            <label for="username-register">Username<span class="__star">*</span></label>
+            <input type="text" name="username" id="username-register" placeholder="your username here"
+                   required pattern="[\w-]+" maxlength="16">
+            <p class="__message"></p>
+            <p class="__tips">less than 17 characters;<br> containing only letters, numbers, "_" and "-".</p>
+
+        </section>
+        <section>
+            <label for="password-register">Password<span class="__star">*</span></label>
+            <input type="password" name="password" id="password-register" placeholder="your password here"
+                   required pattern="[.\w-]+" minlength="6" maxlength="20">
+            <p class="__message"></p>
+            <p class="__tips">6-20 characters;<br> containing only letters, numbers, "_", "-" and ".";
+                <br>Pure number serials are not allowed.
+            </p>
+        </section>
+        <section>
+            <label for="confirmed-password">Confirm<span class="__star">*</span></label>
+            <input type="password" name="confirmed-password" id="confirmed-password"
+                   placeholder="confirmed password here" required>
+            <p class="__message"></p>
+        </section>
+        <section>
+            <label for="email">Email<span class="__star">*</span></label>
+            <input type="email" name="email" id="email" placeholder="your email here" required
+                   pattern="[\w-]+@[\w-]+\.[\w-]+" maxlength="50">
+            <p class="__message"></p>
+        </section>
+        <section>
+            <label for="phone">Phone<span class="__star">*</span></label>
+            <input type="tel" name="phone" id="phone" placeholder="your phone number here" required
+                   pattern="\d+" maxlength="11" minlength="11">
+            <p class="__message"></p>
+        </section>
+        <section>
+            <label for="address">Address<span class="__star">*</span></label>
+            <input type="text" name="address" id="address" placeholder="your address here" required>
+            <p class="__message"></p>
+        </section>
+        <section>
+            <button type="button" value="submit" class="--success">submit</button>
+        </section>
+    </fieldset>
+</form>
 <footer>
     <small>
         Copyright © 2020-2024<br>
@@ -77,6 +109,6 @@
 <script src="js/cookie.js"></script>
 <script src="js/form.js"></script>
 <script src="js/navigator.js"></script>
-<script src="js/search-page.js"></script>
+<script src="js/upload.js"></script>
 </body>
 </html>

@@ -9,13 +9,20 @@
 <body>
 <nav>
     <img src="../shared/icons/icon-hamburger.svg" alt="hamburger" class="__hamburger --display">
+    <img src="../shared/icons/icon-close.svg" alt="close" class="__close">
     <ul class="__menu">
-        <li><a href="index.html">home</a></li>
-        <li><a href="search.html">search</a></li>
-        <li><a href="#">items</a></li>
-        <li><a class="login">login</a></li>
-        <li><a href="register.html">register</a></li>
-        <li><span class="__close">cancel</span></li>
+        <li class="__self">
+            <a href="myspace.html" class="__avatar"></a>
+            <a href="myspace.html" class="__username">username</a>
+        </li>
+        <li class="__home"><a href="index.html" >home</a></li>
+        <li class="__search"><a href="search.html" >search</a></li>
+        <li class="__items"><a href="items.html" >items</a></li>
+        <li class="__login"><span >login</span></li>
+        <li class="__register"><a href="register.html" >register</a></li>
+        <li class="__cart"><a href="cart.html" >cart</a></li>
+        <li class="__upload"><a href="upload.html" >upload</a></li>
+        <li class="__logout"><span >logout</span></li>
     </ul>
 </nav>
 <h1 class="intro__title items">
@@ -205,28 +212,32 @@
 <!--dialog boxes-->
 <div class="dialog-wrapper">
     <div class="dialog">
-        <form action="" method="post">
+        <form action="" method="post" name="login">
             <fieldset>
                 <legend><span>LOGIN</span></legend>
                 <section>
-                    <label for="user_name">Username</label>
-                    <input type="text" name="user_name" id="user_name" placeholder="your username here">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="your username here">
                 </section>
                 <section>
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" placeholder="your password here">
                 </section>
                 <section>
-                    <input type="submit" value="login!" class="button --success">
+                    <input type="button" value="login!" class="button --success" name="submit">
                     <input type="button" value="cancel" class="button __close">
                 </section>
                 <section>
-                    <a href="" class="__tips">Not registered yet? Get an account now!</a>
+                    <a href="register.html" class="--alternative">Not registered yet? Get an account now!</a>
                 </section>
             </fieldset>
         </form>
     </div>
 </div>
-
+<div class="notice">sample</div>
+<script src="js/cookie.js"></script>
+<script src="js/form.js"></script>
+<script src="js/navigator.js"></script>
+<script src="js/item-page.js"></script>
 </body>
 </html>

@@ -6,9 +6,9 @@ require_once 'Base.php';
 use Exception;
 //NOTE: may be reconstructed one day.
 
-class Search extends Base
+class Find extends Base
 {
-    public function searchUsername($text):bool{
+    public function findUsername($text):bool{
 //        echo $text;
         try {
             $sql = "SELECT * FROM users WHERE username='".$text."'";
@@ -23,7 +23,7 @@ class Search extends Base
             throw new Exception($exception->getMessage());
         }
     }
-    public function searchEmail($text):bool{
+    public function findEmail($text):bool{
         try {
             $sql = "SELECT * FROM users WHERE email='".$text."'";
             $result=$this->db->query($sql);
@@ -35,5 +35,16 @@ class Search extends Base
             throw new Exception($exception->getMessage());
         }
     }
-
+    public function showAllItems(){
+        try {
+            $sql = "SELECT * FROM items";
+            $result=$this->db->query($sql);
+            if ($result === false) {
+                throw new Exception($this->db->errorInfo()[2]);
+            }
+            return $result->fetchAll(\PDO::FETCH_ASSOC);
+        } catch (Exception $exception) {
+            throw new Exception($exception->getMessage());
+        }
+    }
 }

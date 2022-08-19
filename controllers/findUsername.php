@@ -1,10 +1,10 @@
 <?php
-require_once '../models/Search.php';
-use php\models\Search;
+require_once '../models/Find.php';
+use php\models\Find;
 //NOTE: may be reconstructed one day.
-$search=new Search();
+$find=new Find();
 try {
-    $found=$search->searchUsername($_GET['username']);
+    $found=$find->findUsername($_GET['username']);
     if($found){
         echo json_encode([
             'username'=>$_GET['username'],

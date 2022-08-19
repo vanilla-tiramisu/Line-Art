@@ -1,40 +1,50 @@
 <?php
 require_once '../models/Account.php';
-require_once '../models/Search.php';
+require_once '../models/Find.php';
 
 use php\models\Account;
-use php\models\Search;
+use php\models\Find;
 
 $account = new Account();
-$search = new Search();
-//TODO:判断前端通过POST发过来的信息是否有效；若有效，则交给Account进一步处理。
+$find = new Find();
 try {
     parse_str(file_get_contents('php://input'), $data);
     $username = $data['username'];
     $password = $data['password'];
     //空白不录入
-    if (!($this->username && $this->password)) {
+    if (!($username && $password)) {
         throw new Exception("Please fill in all the blanks!");
     }
     //长度过长禁止录入
-    if (preg_match("/.{21,}/", $this->password)) {
+    if (preg_match("/.{21,}/", $password)) {
         throw new Exception("Please enter the right password!");
     }
-    $copy = preg_replace("/[\w-]+@[\w-]+\.[\w-]+/", "", $this->username);
-    if ($copy === "" && !preg_match("/.{51,}/", $this->username)) {
+    $copy = preg_replace("/[\w-]+@[\w-]+\.[\w-]+/", "", $username);
+    if ($copy === "" && !preg_match("/.{51,}/", $username)) {
         //输入的是邮箱
-        if ($search->searchUsername($this->username)) {
-            $account->loginByUsername($this->username, $this->password);
+        if ($find->findEmail($username)) {
+            if(!$account->loginByEmail($username,$password)){
+                throw new Exception("Wrong password, please try again.");
+            }
+            session_start();
+            setcookie(session_name(),session_id(),strtotime('+100 hours'),'/');
+            $_SESSION["logged"]=true;
+
         } else {
             throw new Exception("Username not found, please check your input.");
         }
-    } else if (!preg_match("/[^\w-]+/", $this->username)
-        && !preg_match("/.{20,}/", $this->username)) {
+    } else if (!preg_match("/[^\w-]+/", $username)
+        && !preg_match("/.{20,}/", $username)) {
         //输入的是用户名
-        if ($search->searchEmail($this->username)) {
-            $account->loginByEmail($this->username,$this->password);
+        if ($find->findUsername($username)) {
+            if(!$account->loginByUsername($username,$password)){
+                throw new Exception("Wrong password, please try again.");
+            }
+            session_start();
+            setcookie(session_name(),session_id(),strtotime('+100 hours'),'/');
+            $_SESSION["logged"]=true;
         } else {
-            throw new Exception("Username not found, please check your input.");
+            throw new Exception("Username not found, please check your input.".$username);
         }
     } else {
         throw new Exception("Please enter an available username!");

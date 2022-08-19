@@ -3,21 +3,13 @@
  * @param {string} buttonQuery querySelector for submit button
  * @param {string} url the place to send the data to
  * @param {string} noticeQuery querySelector for the notice bar
- * @param {string} jump the url to jump to
+ * @param {string} jump the url to jump to; empty value indicates reloading
  */
 function submitForm(formQuery, buttonQuery, url, noticeQuery, jump) {
-    let NOTICE = document.querySelector(noticeQuery)
     const SUBMIT_BUTTON = document.querySelector(buttonQuery)
-    // SUBMIT_BUTTON.addEventListener('click', submit)
+    SUBMIT_BUTTON.addEventListener('click', submit)
     const FORM = document.querySelector(formQuery)
-    console.log(FORM)
-    function sendNotice(content){
-        NOTICE.innerHTML = content
-        NOTICE.classList.add('--display')
-        setTimeout(() => {
-            NOTICE.classList.remove('--display');
-        }, 2000);
-    }
+
     async function submit() {
         if (FORM.checkValidity()) {
             //如果通过，发送表单。
@@ -33,22 +25,37 @@ function submitForm(formQuery, buttonQuery, url, noticeQuery, jump) {
                         headers: jsonHeaders
                     });
                 let r = await response.json()
-                sendNotice(r.msg)
+                sendNotice(noticeQuery,r.msg)
                 if (r.status === "success") {
                     setTimeout(() => {
                         window.location.href = jump
+                        if (jump===''){
+                            location.reload()
+                        }
                     }, 1000);
                 }
             } catch (error) {
-                sendNotice("Request failed")
+                sendNotice(noticeQuery,"Request failed")
             }
         } else {
-            sendNotice("Failed to pass validity check, please follow the instructions!")
+            sendNotice(noticeQuery,"Failed to pass validity check, please follow the instructions!")
         }
     }
 
 }
 
+/**
+ * @param noticeQuery querySelector for the notice bar
+ * @param content content of the msg.
+ */
+function sendNotice(noticeQuery,content){
+    let NOTICE = document.querySelector(noticeQuery)
+    NOTICE.innerHTML = content
+    NOTICE.classList.add('--display')
+    setTimeout(() => {
+        NOTICE.classList.remove('--display');
+    }, 2000);
+}
 function serialize(form) {
     let parts = [];
     let optValue;
