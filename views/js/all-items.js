@@ -25,7 +25,7 @@ const picFrames=document.querySelectorAll(".items>article>figure");
     for(let i=0;i<picFrames.length&&i<result.length;i++){
         let src="../img/"+result[i].filename;
         console.log(src)
-        console.log(picFrames[i].firstElementChild)
+        // console.log(picFrames[i].firstElementChild)
         picFrames[i].firstElementChild.setAttribute("src",src)
     }
 

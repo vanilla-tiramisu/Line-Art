@@ -45,8 +45,9 @@ function submitForm(formQuery, buttonQuery, url, noticeQuery, jump) {
 }
 
 /**
- * @param noticeQuery querySelector for the notice bar
- * @param content content of the msg.
+ *
+ * @param noticeQuery
+ * @param content
  */
 function sendNotice(noticeQuery,content){
     let NOTICE = document.querySelector(noticeQuery)

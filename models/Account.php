@@ -50,9 +50,12 @@ class Account extends Base
         try {
             $sql = "
                 INSERT INTO users(username, password, email, phone, address) 
-                VALUES ('$this->username','$this->password','$this->email',
-                        '$this->phone','$this->address') ";
-            if ($this->db->exec($sql) === false) {
+                VALUES (:username, :password, :email, :phone, :address)";
+            $sql=$this->db->prepare($sql);
+            $result=$sql->execute(array(":username"=>$this->username,
+                ":password"=>$this->password,":email"=>$this->email,
+                ":phone"=>$this->phone,":address"=>$this->address));
+            if ($result === false) {
                 throw new Exception($this->db->errorInfo()[2]);
             }
 
@@ -64,15 +67,17 @@ class Account extends Base
     public function loginByUsername($username,$password): bool
     {
         try {
-            $sql = "SELECT * FROM users WHERE username='" . $username . "'
-            AND password='".$password."'";
-            $result = $this->db->query($sql);
+            $sql = "SELECT * FROM users WHERE username=:username
+            AND password=:password";
+            $sql=$this->db->prepare($sql);
+            $result = $sql->execute(array(":username"=>$username,
+                ":password"=>$password));
             if ($result === false) {
                 throw new Exception($this->db->errorInfo()[2]);
             }
             //result:PDO对象(PDOStatement)
             //若结果集能够返回一次数据，则非空，表明用户名已占用
-            return !empty($result->fetch());
+            return !empty($sql->fetch());
         } catch (Exception $exception) {
             throw new Exception($exception->getMessage());
         }
@@ -81,13 +86,14 @@ class Account extends Base
     public function loginByEmail($email,$password): bool
     {
         try {
-            $sql = "SELECT * FROM users WHERE email='" . $email . "'
-            AND password='".$password."'";
-            $result = $this->db->query($sql);
+            $sql = "SELECT * FROM users WHERE email=:email 
+            AND password=:password";
+            $sql = $this->db->prepare($sql);
+            $result=$sql->execute(array(':email'=>$email,':password'=>$password));
             if ($result === false) {
                 throw new Exception($this->db->errorInfo()[2]);
             }
-            return !empty($result->fetch());
+            return !empty($sql->fetch());
         } catch (Exception $exception) {
             throw new Exception($exception->getMessage());
         }

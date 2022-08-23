@@ -35,7 +35,7 @@ function highlightSelected(query) {
     selected.classList.add("--selected")
 }
 
-submitForm('form[name=login]', 'form input[name=submit]', '../controllers/login.php', '.notice', "")
+submitForm('form[name=login]', 'form[name=login] input[name=submit]', '../controllers/login.php', '.notice', "")
 //login
 //dialog boxes
 const DIALOG_LOGIN = document.querySelector('.dialog-wrapper')

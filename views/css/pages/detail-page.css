@@ -1,0 +1,75 @@
+/*detail*/
+main.detail{
+    color: #000;
+    padding: 3em 0;
+    margin: 0 15%;
+}
+main.detail>.__price{
+    margin: .5em 0;
+    font-size: 1.5em;
+}
+
+main.detail>.__price>.__field{
+    font-weight: 700;
+    color: darkslategrey;
+}
+main.detail>.__price>.__value{
+    font-family: "Segoe Script",sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #000;
+}
+.detail__attr>button{
+    width: 100%;
+    margin-top: 1em;
+}
+.detail__attr>button.--buy{
+    background-color: orange;
+    border-color: #e56801;
+}
+
+main.detail>.__img-wrapper {
+    width: 100%;
+    margin: 0;
+}
+
+.detail__attr>p,.detail__description{
+    font-size: 1.2em;
+    margin-top: .5em;
+}
+
+@media (min-width: 900px) {
+    main.detail>.__img-wrapper {
+        width: 55%;
+        margin: 0;
+    }
+    main.detail>.__img-wrapper>img{
+        float: left;
+        width: 100%;
+        /*margin-right: 2em;*/
+        margin-bottom: 1em;
+    }
+    main.detail>.__price{
+        width: 40%;
+        float: right;
+    }
+    main.detail>.__price>*{
+        display: block;
+    }
+    .detail__attr{
+        /*position: absolute;*/
+        margin-bottom: 1em;
+        width: 40%;
+        display: inline-block;
+        float: right;
+    }
+    .detail__attr>*{
+        /*position: absolute;*/
+        display: block;
+        word-wrap: break-word;
+    }
+
+    main.detail>.detail__description{
+        clear: both;
+    }
+}

@@ -97,17 +97,39 @@ main.items > article > figure > figcaption {
     padding: 1em;
 }
 
-/*detail*/
-main.detail {
-    width: 80%;
-    padding: 2em;
-    margin: 0 auto;
+/*upload*/
+.upload h1 {
+    text-align: center;
+    padding-top: 2.5em
 }
 
-.detail__img-wrapper{
-    text-align: center;
-    margin: auto;
+form.upload{
+    padding-left: 20%;
+    padding-right: 20%;
+
 }
-.detail__img-wrapper>img{
-    max-height: 70vh;
+
+.upload section{
+    display: inline-block;
+}
+.upload input[type=number],.upload input[name=height],.upload input[name=width]{
+    width: 7em;
+}
+@media (max-width: 900px) {
+    .upload section{
+        display: block;
+        text-align: center;
+    }
+
+}
+
+.upload label[for=picfile]>img{
+    transition: .2s;
+}
+
+.upload label[for=picfile]>img:hover{
+    filter: brightness(1.05);
+}
+.upload input[type=file]{
+    margin-left: 130px;
 }

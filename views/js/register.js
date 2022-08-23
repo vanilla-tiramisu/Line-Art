@@ -1,4 +1,4 @@
-submitForm('form', 'form button[value=submit]', '../controllers/Register.php', '.notice', "index.html")
+submitForm('form.register', 'form.register button[value=submit]', '../controllers/Register.php', '.notice', "index.html")
 
 const Username = document.forms[0].elements["username"];
 Username.addEventListener('keypress', (event) => {

@@ -1,16 +1,20 @@
 <?php
-require_once '../models/Account.php';
-use php\models\Account;
-
-$account=new Account();
-
+require_once '../models/Find.php';
+use php\models\Find;
+$find=new Find();
 try {
-    parse_str(file_get_contents('php://input'),$data);
-    $account->addAccount($data);
+    $username=$find->getUsername();
+    if($username){
         echo json_encode([
+            'msg'=>$username,
             'status' => 'success',
-            'msg' => 'Registered successfully!',
         ], JSON_THROW_ON_ERROR);
+    }
+    else{
+        echo json_encode([
+            'status' => 'fail'
+        ], JSON_THROW_ON_ERROR);
+    }
 }catch (Exception $exception){
     try {
         echo json_encode([

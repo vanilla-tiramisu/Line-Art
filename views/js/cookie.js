@@ -16,3 +16,12 @@ async function clearSession() {
     }
     location.reload()
 }
+
+async function getUsername() {
+    try {
+        let response = await fetch('../controllers/getUsername.php');
+        return await response.json()
+    } catch (error) {
+        console.log('Request failed', error);
+    }
+}

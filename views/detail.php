@@ -2,11 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>Line Art - Myspace</title>
+    <title>Line Art - item</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>
+<script>
+    let response;
+</script>
+<?php
+//相当于是行使controller的功能。
+require_once '../models/Find.php';
+
+use php\models\Find;
+
+$find = new Find();
+try {
+    if (isset($_GET['id'])) {
+        $found = $find->showItemById($_GET['id']);
+        if ($found) {
+            $result = json_encode([
+                'status' => 'success',
+                'msg' => $found
+            ], JSON_THROW_ON_ERROR);
+            $find->VisitingAnItem($_GET['id']);
+        } else {
+            $result = json_encode([
+                'status' => 'fail',
+            ], JSON_THROW_ON_ERROR);
+        }
+    } else {
+        $result = json_encode([
+            'status' => 'fail',
+        ], JSON_THROW_ON_ERROR);
+    } ?>
+    <script>response = (<?php echo $result;?>)</script>
+<?php
+} catch (Exception $exception) {
+try {
+$result = json_encode([
+    'status' => 'fail',
+    'msg' => $exception->getMessage(),
+], JSON_THROW_ON_ERROR);
+?>
+    <script>response = (<?php echo $result;?>)</script>
+<?php
+} catch (JsonException $e) {
+$result = $e; ?>
+    <script>response = (<?php echo $result;?>)</script>
+    <?php
+}
+}
+?>
 <nav>
     <img src="../shared/icons/icon-hamburger.svg" alt="hamburger" class="__hamburger --display">
     <img src="../shared/icons/icon-close.svg" alt="close" class="__close">
@@ -118,6 +165,6 @@
 <script src="js/cookie.js"></script>
 <script src="js/form.js"></script>
 <script src="js/navigator.js"></script>
-<script src="js/myspace.js"></script>
+<script src="js/detail.js"></script>
 </body>
 </html>

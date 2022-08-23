@@ -29,7 +29,7 @@ try {
             session_start();
             setcookie(session_name(),session_id(),strtotime('+100 hours'),'/');
             $_SESSION["logged"]=true;
-
+            $_SESSION["email"]=$username;
         } else {
             throw new Exception("Username not found, please check your input.");
         }
@@ -43,8 +43,9 @@ try {
             session_start();
             setcookie(session_name(),session_id(),strtotime('+100 hours'),'/');
             $_SESSION["logged"]=true;
+            $_SESSION["username"]=$username;
         } else {
-            throw new Exception("Username not found, please check your input.".$username);
+            throw new Exception("Username not found, please check your input.");
         }
     } else {
         throw new Exception("Please enter an available username!");

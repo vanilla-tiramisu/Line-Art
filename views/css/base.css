@@ -5,6 +5,7 @@
 @import "components/nav.css";
 @import "components/pager.css";
 @import "components/notice.css";
+@import "pages/detail-page.css";
 /*clear*/
 :root{
     box-sizing: border-box;
