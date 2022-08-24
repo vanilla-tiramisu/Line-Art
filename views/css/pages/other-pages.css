@@ -15,7 +15,7 @@ section.search > .intro__text {
 }
 
 section.search form {
-    min-width: 50vw;
+    min-width: 60vw;
     position: relative;
 }
 
@@ -23,8 +23,7 @@ section.search form {
     width: 100%;
 }
 
-.search-box > section > button {
-    float: right;
+.search-box > section > button{
     position: absolute;
     z-index: 2;
     padding: unset;
@@ -32,11 +31,25 @@ section.search form {
     height: 2.5em;
     border: none;
     font-size: 1.25em;
+}
+.search-box > section > button{
+    float: right;
+    border-radius: 0 1em 1em 0;
     background-color: olivedrab;
     color: #fff;
-    border-radius: 0 1em 1em 0;
 }
 
+.search-box > section > select{
+    position: absolute;
+    font-size: 1.25em;
+    height: 2.5em;
+    border: none;
+    background-color: transparent;
+    /*top: 50%;*/
+    /*margin-top: -1em;*/
+    margin-left: -4em;
+    z-index: 4;
+}
 .search-box > section > button:hover {
     transform: none;
     background-color: #7da629;
@@ -62,6 +75,7 @@ h1.items {
 
 main.items {
     padding: 2em 0;
+    min-height: 70vh;
 }
 
 main.items > h2 {
@@ -69,32 +83,46 @@ main.items > h2 {
     margin: 1em;
 }
 
+main.items>p{
+    text-align: center;
+}
+
+label[for=style]{
+    display: block;
+    text-align: right;
+    margin-right: 10vw;
+}
+
 main.items > article {
     width: 80vw;
     margin: 2em auto;
     display: grid;
     gap: 2em;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
 }
 
-main.items > article > figure {
+main.items > article > a {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 1em;
-
-    overflow-x: hidden;
-    overflow-y: auto;
+    cursor: pointer;
+    overflow: hidden;
 }
 
-main.items > article > figure > img {
-    height: 200px;
-    width: 100%;
+main.items > article > a>figure > img {
+    height: 400px;
+    width: 60%;
+    float: left;
     object-fit: cover;
 }
 
-main.items > article > figure > figcaption {
-    text-align: center;
+main.items > article > a>figure > figcaption {
+    box-sizing: border-box;
     padding: 1em;
+    width: 40%;
+    float: right;
+    max-height: 400px;
+    overflow: hidden;
 }
 
 /*upload*/

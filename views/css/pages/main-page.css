@@ -99,48 +99,49 @@ section.__intro {
     overflow: hidden;
 }
 
-.carousel__img-wrapper > img {
+.carousel__img-wrapper > a>img,.carousel__img-wrapper > a {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: 1s ease-in-out;
 }
-
-.carousel__img-wrapper > img.--current {
-    display: inline-block;
+.carousel__img-wrapper > a:hover {
+    cursor: pointer;
+}
+.carousel__img-wrapper > a.--current {
     position: absolute;
     z-index: 1;
     left: 0;
     top: 0;
 }
 
-.carousel__img-wrapper > img.--next {
-    display: inline-block;
+.carousel__img-wrapper > a.--next {
     position: absolute;
     left: 100%;
     top: 0;
 }
 
-.carousel__img-wrapper > img.--last {
-    display: inline-block;
+.carousel__img-wrapper > a.--last {
     position: absolute;
     left: -100%;
     top: 0;
 }
 
-.carousel__extended-desc{
-    display: none;
+.carousel__description{
+    font-size: 1.5em;
+}
+.carousel__description>h4{
+    margin-bottom: 1em;
+}
+.carousel__description h5{
+    color: darkslategrey;
+    font-family: "Dubai", sans-serif;
+    font-weight: 500;
 }
 @media (min-width: 50em) {
     .carousel__frame{
         float: left;
         margin-right: 2em;
-    }
-    .carousel__description{
-        line-height: 1.5em;
-    }
-    .carousel__extended-desc{
-        display: block;
     }
 }
 /*flow(hottest)*/
@@ -168,6 +169,16 @@ section.__intro {
     color: white;
     background-color: gold;
 }
+
+.main__items>figure>a:hover{
+    cursor: pointer;
+}
+
+.main__items>figure>a>img{
+    object-fit: cover;
+    width: 100%;
+    vertical-align: bottom;
+}
 @media (min-width: 50em) {
     .main__items{
         display: grid;
@@ -179,9 +190,7 @@ section.__intro {
     .main__items>figure{
         margin: 0;
         background: unset;
-        display: flex;
-        flex-flow: column wrap;
-        overflow-x: hidden;
+        overflow: hidden;
     }
     .main__items>figure>figcaption{
         padding: 1em;
@@ -196,10 +205,8 @@ section.__intro {
         grid-column: span 2;
     }
 
-    .main__items>figure>img{
-        object-fit: cover;
-        width: 100%;
-    }
+
+
 }
 /*footer*/
 footer {

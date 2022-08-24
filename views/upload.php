@@ -117,12 +117,12 @@ $result = $e; ?>
             <p class="__tips">4 bits at most</p>
         </section>
         <section>
-            <label for="height">Height</label>
-            <input name="height" id="height" placeholder="unknown"
-                   maxlength="10" pattern="\d*(\.\d*)?" min="0">
-            <p class="__message"></p>
             <label for="width">Width</label>
             <input name="width" id="width" placeholder="unknown"
+                   maxlength="10" pattern="\d*(\.\d*)?" min="0">
+            <p class="__message"></p>
+            <label for="height">Height</label>
+            <input name="height" id="height" placeholder="unknown"
                    maxlength="10" pattern="\d*(\.\d*)?" min="0">
             <p class="__message"></p>
             <select name="unit" id="length-unit">
